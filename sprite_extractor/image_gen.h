@@ -12,6 +12,18 @@ typedef struct {
     uint8_t blue;
 } pixel_t;
 
+typedef struct {
+  uint8_t *data;
+  uint32_t len;
+} imagedat_t;
+
+typedef struct {
+  png_bytep *data;
+  uint32_t height;
+  uint32_t width;
+} pngimagedat_t;
+
+
 /* A picture. */
     
 typedef struct  {
@@ -25,5 +37,6 @@ typedef struct  {
 pixel_t *pixel_at (bitmap_t * bitmap, int x, int y);
 int save_png_to_file (bitmap_t *bitmap, const char *path);
 int pix (int value, int max);
+pngimagedat_t *read_png_file(char *filename);
 
 #endif

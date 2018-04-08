@@ -94,7 +94,11 @@ data_jump_array:
 
 SECTION "r2", ROMX, BANK[1]
 
-INCBIN "baserom.gb", $4000, $3DB0 
+INCBIN "baserom.gb", $4000, $32 
+
+INCBIN "gfx/sprites0.bin", $0000, $F00 
+
+INCBIN "baserom.gb", $4F32, $3DB0 - $0F32
 
 call_jump_hack_3db0:
 	call $0837				; 0613 : cd 37 08
@@ -114,24 +118,11 @@ call_jump_hack_3db0:
 
 SECTION "r3", ROMX, BANK[2]
 
-INCBIN "baserom.gb", $8000, $3FFF
+INCBIN "baserom.gb", $8000, $391A
 
-;INCBIN "baserom.gb", $8000, $832
-;HackTile01:
-;	db $FF, $EE, $EE, $DD, $FF, $EE, $EE, $DD
-;	db $00, $00, $00, $00, $00, $00, $00, $00
-;HackTile02:
-;	db $00, $00, $00, $00, $00, $00, $00, $00
-;	db $00, $00, $00, $00, $00, $00, $00, $00
-;HackTile03:
-;	db $00, $00, $00, $00, $00, $00, $00, $00
-;	db $00, $00, $00, $00, $00, $00, $00, $00
-;INCBIN "baserom.gb", $8862, $379D
+INCBIN "gfx/sprites3.bin", $0000, $500 
 
-
-
-
-
+INCBIN "baserom.gb", $BE1A, $3FFF - $3E1A
 
 SECTION "r4", ROMX, BANK[3]
 

@@ -17,10 +17,6 @@ typedef struct  {
   int max_sprites;
 } config_t;
 
-typedef struct {
-  uint8_t *data;
-  uint32_t len;
-} imagedat_t;
 
 void prinf_config(config_t *c) {
   printf("Input file: %s\n", c->in_file);
