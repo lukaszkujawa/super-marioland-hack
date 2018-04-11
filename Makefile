@@ -1,3 +1,3 @@
 all:
 	rgbasm -o main.o main.asm
-	rgblink -o mario.gb main.o
+	rgblink -p0xFF -o mario.gb main.o
